@@ -17,8 +17,14 @@ class Update extends React.Component {
             content : document.getElementById("content").value
         }
 
-        axios.put(`http://localhost:3003/self-intro/${id}`, data).then(() => {
+        axios.put(`/self-intro/${id}`, data).then(() => {
             window.location.href = `/intro/${id}`;
+        });
+    }
+
+    deleteData(id) {
+        axios.delete(`/self-intro/${id}`).then(() => {
+            window.location.href = "/";
         });
     }
 
@@ -61,15 +67,19 @@ class Update extends React.Component {
                             <Row>
                                 <Col><Form.Label>Content</Form.Label></Col>
                                 <Col>
-                                    <FuncContent />
+                                    <FuncContent str={intro.content}/>
                                 </Col>
                             </Row>
                             <Form.Control as="textarea" rows="15" name="content" defaultValue={intro.content} onKeyUp={this.countTextarea.bind()}/>
                         </Form.Group>
 
                         <Form.Group as={Col} id="btns">
-                            <Button variant="danger" onClick={this.cancelUpdate.bind()}>
+                            <Button variant="secondary" onClick={this.cancelUpdate.bind()}>
                                 취소
+                            </Button>
+
+                            <Button variant="danger" onClick={this.deleteData.bind(null, intro.id)}>
+                                삭제
                             </Button>
                             
                             <Button variant="primary" onClick={this.updateData.bind(null, intro.id)}>

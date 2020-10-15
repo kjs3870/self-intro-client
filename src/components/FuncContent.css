@@ -11,10 +11,22 @@ svg {
   list-style: none;
   margin-left: 20px;
   float: right;
+  font-size: 13px;
+  font-weight: bold;
+  padding-top: 8px;
+}
+
+.func ul #copy {
+  cursor: pointer;
+}
+
+.func a {
+  color: black;
 }
 
 .func a:hover {
   text-decoration: none;
+  color: black;
 }
 /* .func span button {
   width: 100px;

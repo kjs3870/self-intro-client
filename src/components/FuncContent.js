@@ -1,5 +1,4 @@
 import React from "react";
-import {BiCopyAlt} from "react-icons/bi";
 import "./FuncContent.css";
 
 function FuncContent({str}) {
@@ -22,13 +21,10 @@ function FuncContent({str}) {
     return (
         <div className="func">
             <ul>
-                <li><a href="https://www.jobkorea.co.kr/service/user/tool/spellcheck" rel="noopener noreferrer" target="_blank">맞춤법 검사</a></li>
-                <li><BiCopyAlt size="20px" onClick={copyContent}/></li>
+                <li><span id="copy" onClick={copyContent}>Copy</span></li>
+                <li><a href="https://www.jobkorea.co.kr/service/user/tool/spellcheck" rel="noopener noreferrer" target="_blank">맞춤법검사</a></li>
                 <li><span id="byteCnt">{byteCnt}</span>Byte / <span id="strCnt">{strCnt}</span>자</li>
             </ul>
-            {/* <span>
-                || 
-            </span> */}
         </div>
     );
 }

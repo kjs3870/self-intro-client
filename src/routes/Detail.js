@@ -3,9 +3,9 @@ import { Container, Form, Row, Col, Button, Spinner } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import FuncContent from "../components/FuncContent";
 import axios from "axios";
-import "./Intro.css";
+import "./Detail.css";
 
-class Intro extends React.Component {
+class Detail extends React.Component {
     state = {
         isLoading : true,
         intro: {}
@@ -20,7 +20,7 @@ class Intro extends React.Component {
     }
 
     getIntro = async (id) => {
-        const {data} = await axios.get(`http://localhost:3003/self-intro/${id}`);
+        const {data} = await axios.get(`/self-intro/${id}`);
         this.setState({isLoading: false, intro:data});
     }
 
@@ -73,7 +73,7 @@ class Intro extends React.Component {
                         </Form.Row>
 
                         <Form.Group as={Col} id="btns">
-                            <Button variant="danger" onClick={this.goHome.bind()}>
+                            <Button variant="secondary" onClick={this.goHome.bind()}>
                                 나가기
                             </Button>
                             
@@ -90,4 +90,4 @@ class Intro extends React.Component {
     }
 }
 
-export default Intro;
+export default Detail;

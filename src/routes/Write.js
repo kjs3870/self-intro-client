@@ -12,7 +12,7 @@ function Write() {
             content : document.getElementById("content").value
         }
 
-        axios.post("http://localhost:3003/self-intro/", data).then((result) => {
+        axios.post("/self-intro/", data).then((result) => {
             const {lastInsertId} = result.data;
             window.location.href = `/intro/${lastInsertId}`;
         })

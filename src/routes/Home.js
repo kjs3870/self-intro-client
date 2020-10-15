@@ -1,8 +1,8 @@
 import React from "react";
 import Intro from "../components/Intro";
-import {Container, Row, Col, Spinner} from "react-bootstrap";
+import {Container, Row, Col} from "react-bootstrap";
 import axios from "axios";
-import "./Home.css"
+import Loader from "../components/Loader";
 
 class Home extends React.Component {
     state = {
@@ -11,7 +11,7 @@ class Home extends React.Component {
     }
 
     getIntros = async () => {
-        const {data} = await axios.get("http://localhost:3003/self-intro/");
+        const {data} = await axios.get("/self-intro/");
         this.setState({intros: data, isLoading:false});
     }
 
@@ -24,11 +24,7 @@ class Home extends React.Component {
         return (
             <Container>
                 {isLoading ? (
-                    <div className="loader">
-                        <Spinner animation="border" role="status">
-                            <span className="sr-only">Loading...</span>
-                        </Spinner>
-                    </div>
+                    <Loader />
                 ) : (
                     <Row xs={1} md={2} className="intros">
                         {intros.map((intro) => {
