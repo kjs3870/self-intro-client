@@ -33,13 +33,15 @@ class Home extends React.Component {
                     <Row xs={1} md={2} className="intros">
                         {intros.map((intro) => {
                             return (
-                                <Col>
+                                <Col key={intro.id}>
                                     <Intro
                                         key = {intro.id}
                                         id = {intro.id}
                                         title = {intro.title}
                                         company = {intro.company}
                                         content = {intro.content}
+                                        createdAt = {intro.createdAt}
+                                        updatedAt = {intro.updatedAt}
                                     />
                                 </Col>
                             );

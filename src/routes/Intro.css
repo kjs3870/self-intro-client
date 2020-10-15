@@ -1,0 +1,12 @@
+#formRow {
+  margin-right: 1%;
+}
+
+form textarea {
+  resize: none;
+}
+
+form #btns Button {
+  float: right;
+  margin-left: 2%;
+}

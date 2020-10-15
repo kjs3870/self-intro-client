@@ -1,0 +1,22 @@
+svg {
+  cursor: pointer;
+}
+
+.func {
+  float: right;
+  height: 10px;
+}
+
+.func ul li {
+  list-style: none;
+  margin-left: 20px;
+  float: right;
+}
+
+.func a:hover {
+  text-decoration: none;
+}
+/* .func span button {
+  width: 100px;
+  margin-bottom: 4px;
+} */
