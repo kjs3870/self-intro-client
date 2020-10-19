@@ -17,13 +17,13 @@ class Update extends React.Component {
             content : document.getElementById("content").value
         }
 
-        axios.put(`/self-intro/${id}`, data).then(() => {
+        axios.put(`/api/self-intro/${id}`, data).then(() => {
             window.location.href = `/intro/${id}`;
         });
     }
 
     deleteData(id) {
-        axios.delete(`/self-intro/${id}`).then(() => {
+        axios.delete(`/api/self-intro/${id}`).then(() => {
             window.location.href = "/";
         });
     }

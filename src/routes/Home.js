@@ -11,7 +11,7 @@ class Home extends React.Component {
     }
 
     getIntros = async () => {
-        const {data} = await axios.get("/self-intro/");
+        const {data} = await axios.get("/api/self-intro/");
         this.setState({intros: data, isLoading:false});
     }
 

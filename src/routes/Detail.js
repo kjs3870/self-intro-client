@@ -20,7 +20,7 @@ class Detail extends React.Component {
     }
 
     getIntro = async (id) => {
-        const {data} = await axios.get(`/self-intro/${id}`);
+        const {data} = await axios.get(`/api/self-intro/${id}`);
         this.setState({isLoading: false, intro:data});
     }
 
